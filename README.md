@@ -1,9 +1,4 @@
-# React TypeScript Starter Pack
+# Todo-app using React with Type-script
 
-To use this template click `Use this template`
+https://grechana.github.io/TODO_app/
 
-### Available Scripts
-
-`Deploy` - available to deploy your application to gh-pages
-
-`SCSS Preprocessor` - available to write your styles with modern style language
