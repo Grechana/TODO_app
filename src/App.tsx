@@ -1,27 +1,34 @@
-import React from 'react';
-import './App.scss';
-
-interface Props {
-  onClick: () => void;
-}
-
-export const Provider: React.FC<Props> = React.memo(
-  ({ onClick, children }) => (
-    <button
-      type="button"
-      onClick={onClick}
-    >
-      {children}
-    </button>
-  ),
-);
+/* eslint-disable jsx-a11y/label-has-associated-control */
+import React, { useContext } from 'react';
+import { Header } from './Components/Header';
+import { Todos } from './Components/Todos';
+import { Footer } from './Components/Footer';
+import { TodosContext } from './TodosContext';
 
 export const App: React.FC = () => {
+  const { todos, allCompleted, filteredTodos } = useContext(TodosContext);
+
   return (
-    <div className="starter">
-      <Provider onClick={() => ({})}>
-        <TodoList />
-      </Provider>
+    <div className="todoapp">
+      <Header />
+      <>
+        <section className="main">
+          {todos.length > 0 && (
+            <>
+              <input
+                type="checkbox"
+                id="toggle-all"
+                className="toggle-all"
+                data-cy="toggleAll"
+                onClick={allCompleted}
+              />
+              <label htmlFor="toggle-all">Mark all as complete</label>
+              <Todos todos={filteredTodos} />
+            </>
+          )}
+        </section>
+      </>
+      <Footer />
     </div>
   );
 };

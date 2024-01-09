@@ -1,11 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.scss';
-import { App } from './App';
+import { render } from 'react-dom';
 
-ReactDOM.render(
-  <React.StrictMode>
+import './styles/index.css';
+import './styles/todo-list.css';
+import './styles/filters.css';
+
+import { App } from './App';
+import { TodosProvider } from './TodosContext';
+
+const root = document.getElementById('root');
+
+render(
+  <TodosProvider>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root'),
+  </TodosProvider>,
+  root,
 );
