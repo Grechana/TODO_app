@@ -193,6 +193,13 @@ body {
   text-decoration: none;
 }
 
+.toggle:hover{
+ cursor: pointer;
+}
+
+label:hover{
+  cursor: pointer;
+}
 /*
 	Hack to remove background from Mobile Safari.
 	Can't use it globally since it destroys checkboxes in Firefox
