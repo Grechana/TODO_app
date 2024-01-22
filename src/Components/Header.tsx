@@ -22,7 +22,7 @@ export const Header: React.FC = () => {
 
   return (
     <header className="header">
-      <h1>todos</h1>
+      <h1>Todos</h1>
 
       <form onSubmit={handleSubmit}>
         <input
